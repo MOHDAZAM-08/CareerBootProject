@@ -484,22 +484,25 @@ button:hover {
 
 /* table */
 table {
-  border-collapse: collapse;
-  width: 100%;
+  width: 90%;
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 20px;
+  margin: auto;
 }
 
 th, td {
   padding: 10px;
-  text-align: left;
-  vertical-align: top;
+  text-align: center;
+  /* vertical-align: top; */
+  font-size: 1.3rem;
   border: 1px solid #ddd;
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #0151e642;
+  font-size: 2rem;
+  padding-top: 20px;
 }
 
 tr:nth-child(even) {
