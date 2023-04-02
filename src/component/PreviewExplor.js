@@ -17,152 +17,227 @@ import axios from 'axios'
 
 function Dsa(porps) {
   return (
-    <div>
-      {porps.data.map((datas) => (
-        <div key={datas.id}>
-          <h4 style={{ color: "#003b76", fontSize: "4rem", padding: "40px 70px" }}>{porps.activeField}</h4>
-          <div className="container fullview">
-            <div className="card">
-              <div class="accordion" id="accordionExample" style={{ width: "80%", margin: "0 auto" }}>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
-                      {porps.activeField} Road map
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body" style={{ fontSize: "1.3rem" }}>
-                      <div className="card">
-                        <img src={photo} alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      {porps.activeField} on youtube
-                    </button>
-                  </h2>
-                  <div key={datas.id} id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="accordion-body" style={{ fontSize: "1.3rem" }}>
-                      <div className="card">
-                        <span > {datas.file_courselink}</span><br />
-                        <span > {datas.rating}</span><br />
-                        <span > {datas.views}</span><br />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Best paid coures
-                    </button>
-                  </h2>
-                  <div key={datas.id} id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div class="accordion-body" style={{ fontSize: "1.3rem" }}>
-                      <span>
-                      {datas.description}
-                       </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-
-  )
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th><br/>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Views</th>
+          <th>Course Link</th>
+           <th>You tube Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {porps.data.map((course) => (
+          <tr key={course.id}>
+            <td>{course.description}</td><br/>
+            <td>{course.price}</td>
+            <td>{course.rating}</td>
+            <td>{course.views}</td>
+            <td>
+              <a href={course.file_courselink}>Course Link</a>
+            </td>
+            <td>
+              <a href={course.file_ytlink}>You tube Link</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
 
-function WebDev() {
-  return <div>
-    <h4 style={{ color: "#003b76", fontSize: "4rem", padding: "40px 70px" }}>Web Development</h4>
-    <div className="container fullview">
-      <div className="card">
-        <div class="accordion" id="accordionExample" style={{ width: "80%", margin: "0 auto" }}>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
-                Web Development Road map
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body" style={{ fontSize: "1.3rem" }}>
-                <div className="card">
-                  <h2>HTML</h2>
-                  <img src={photo1} alt="" />
-                  <h2>CSS</h2>
-                  <img src={photo2} alt="" />
-                  <h2>FRONT-END FREAMWORK</h2>
-                  <img src={photo3} alt="" />
-                  <h2>STATE MANAGEMENT</h2>
-                  <img src={photo4} alt="" />
-                  <h2>BACK-END</h2>
-                  <img src={photo5} alt="" />
-                  <h2>BACK-END FRAME</h2>
-                  <img src={photo6} alt="" />
-                  <h2>DATABASE</h2>
-                  <img src={photo7} alt="" />
-                  <h2>AUNTICATION</h2>
-                  <img src={photo8} alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Web Development on youtube
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div class="accordion-body" style={{ fontSize: "1.3rem" }}>
-                <div className="card">
-                  <span style={{ color: "blue" }}>1: https://www.freecodecamp.org/news/beginners-roadmap-web-development/ </span><br />
-                  <span style={{ color: "blue" }}>2: https://www.scaler.com/topics/software-engineering/web-development-roadmap/ </span><br />
-                  <span style={{ color: "blue" }}>3: https://roadmap.sh/ </span><br />
-                  <span style={{ color: "blue" }}>4: https://www.geeksforgeeks.org/roadmap-to-become-a-web-developer-in-2022/ </span><br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Best paid coures
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-              <div class="accordion-body" style={{ fontSize: "1.3rem" }}>
-                <span>1: Udemy: Udemy is an online learning platform that offers a wide range of coding courses, including web development, data science, and mobile app development. Some popular courses on Udemy include "The Complete Web Developer Course 2.0" and "The Ultimate MySQL Bootcamp."
-                  <br />
-                  <br />
-                  2: Codecademy Pro: Codecademy Pro is a paid version of Codecademy, which offers interactive coding lessons in a wide range of programming languages, including Python, Java, and Ruby. Codecademy Pro also offers personalized learning plans and access to real-world projects.
+function AndroidDev(porps) {
+  return (
+    <table>
+      <thead>
+        <tr>
+          {/* <th>Category</th> */}
+          <th>Description</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Views</th>
+          <th>Course Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {porps.data.map((course) => (
+          <tr key={course.id}>
+            {/* <td>{course.category}</td> */}
+            <td>{course.description}</td>
+            <td>{course.price}</td>
+            <td>{course.rating}</td>
+            <td>{course.views}</td>
+            <td>
+              <a href={course.file_courselink}>Course Link</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
 
-                  <br />
-                  <br />
-                  3:  Coursera: Coursera offers online courses in partnership with top universities and organizations, including coding courses in computer science and data science. Some popular courses on Coursera include "Python for Data Science" and "Web Design for Everybody."
-
-                  <br />
-                  <br />
-                  4: Pluralsight: Pluralsight offers a wide range of courses in software development, IT operations, and cybersecurity. Pluralsight also offers personalized learning paths and access to hands-on projects to help you apply your skills.
-
-                  <br />
-                  <br />
-                  5:  edX: edX is an online learning platform that offers courses in a wide range of subjects, including computer science and programming. Some popular coding courses on edX include "Introduction to Computer Science" and "Python for Data Science." </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+function WebDev(porps) {
+  return (
+    <table>
+      <thead>
+        <tr>
+          {/* <th>Category</th> */}
+          <th>Description</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Views</th>
+          <th>Course Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {porps.data.map((course) => (
+          <tr key={course.id}>
+            {/* <td>{course.category}</td> */}
+            <td>{course.description}</td>
+            <td>{course.price}</td>
+            <td>{course.rating}</td>
+            <td>{course.views}</td>
+            <td>
+              <a href={course.file_courselink}>Course Link</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
 
 
+function Blockchain(porps) {
+  return (
+    <table>
+      <thead>
+        <tr>
+          {/* <th>Category</th> */}
+          <th>Description</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Views</th>
+          <th>Course Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {porps.data.map((course) => (
+          <tr key={course.id}>
+            {/* <td>{course.category}</td> */}
+            <td>{course.description}</td>
+            <td>{course.price}</td>
+            <td>{course.rating}</td>
+            <td>{course.views}</td>
+            <td>
+              <a href={course.file_courselink}>Course Link</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+
+
+function Ai(porps) {
+  return (
+    <table>
+      <thead>
+        <tr>
+          {/* <th>Category</th> */}
+          <th>Description</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Views</th>
+          <th>Course Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {porps.data.map((course) => (
+          <tr key={course.id}>
+            {/* <td>{course.category}</td> */}
+            <td>{course.description}</td>
+            <td>{course.price}</td>
+            <td>{course.rating}</td>
+            <td>{course.views}</td>
+            <td>
+              <a href={course.file_courselink}>Course Link</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+
+
+function MachineLearning(porps) {
+  return (
+    <table>
+      <thead>
+        <tr>
+          {/* <th>Category</th> */}
+          <th>Description</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Views</th>
+          <th>Course Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {porps.data.map((course) => (
+          <tr key={course.id}>
+            {/* <td>{course.category}</td> */}
+            <td>{course.description}</td>
+            <td>{course.price}</td>
+            <td>{course.rating}</td>
+            <td>{course.views}</td>
+            <td>
+              <a href={course.file_courselink}>Course Link</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+
+function Cybersecurity(porps) {
+  return (
+    <table>
+      <thead>
+        <tr>
+          {/* <th>Category</th> */}
+          <th>Description</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Views</th>
+          <th>Course Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {porps.data.map((course) => (
+          <tr key={course.id}>
+            {/* <td>{course.category}</td> */}
+            <td>{course.description}</td>
+            <td>{course.price}</td>
+            <td>{course.rating}</td>
+            <td>{course.views}</td>
+            <td>
+              <a href={course.file_courselink}>Course Link</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
 
 export default function PreviewExplor() {
@@ -221,13 +296,13 @@ export default function PreviewExplor() {
             <button className='btn btn-primary' onClick={() => handleButtonClick("Cybersecurity")}>Cybersecurity</button>
           </div>
         </div>
-        {activeField === "Web Development" && <WebDev />}
-        {/* {activeField === "Android Development" && <AndroidDev />} */}
-        {activeField === "Data Structures and Algorithms" && <Dsa data={data} />}
-        {/* {activeField === "Blockchain" && <Blockchain />}
-        {activeField === "Artificial Intelligence" && <Ai />}
-        {activeField === "Machine Learning" && <MachineLearning />}
-        {activeField === "Cybersecurity" && <Cybersecurity />} */}
+        {activeField === "Web Development" && <WebDev  data={data} active={activeField}/>}
+        {activeField === "Android Development" && <AndroidDev data={data} active={activeField} />}
+        {activeField === "Data Structures and Algorithms" && <Dsa data={data} active={activeField}/>}
+        {activeField === "Blockchain" && <Blockchain data={data} active={activeField} />}
+        {activeField === "Artificial Intelligence" && <Ai data={data} active={activeField} />}
+        {activeField === "Machine Learning" && <MachineLearning data={data} active={activeField} />}
+        {activeField === "Cybersecurity" && <Cybersecurity data={data} active={activeField} />}
       </div>
     </>
   )
